@@ -16,14 +16,11 @@ class MergadoProvider extends AbstractProvider {
 	 */
 	const DEFAULT_BASE_URL = 'https://app.mergado.com/oauth2';
 
+    protected $oAuthEndpoint;
+
 	public function __construct(array $options = [], array $collaborators = []) {
 
 		$this->assertRequiredOptions($options);
-
-		foreach ($options as $key => $value) {
-			$this->$key = $value;
-		}
-
 		parent::__construct($options, $collaborators);
 
 	}
